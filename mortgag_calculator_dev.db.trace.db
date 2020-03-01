@@ -1,0 +1,416 @@
+2020-02-27 20:04:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SCHEMA_MIGRATIONS" not found; SQL statement:
+SELECT 1 FROM schema_migrations [42102-200]
+2020-02-28 00:33:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "TIME_STAMP" not found; SQL statement:
+INSERT INTO mortgagecalculator
+(id, calculation_name, purchase_price, deposit_paid, bond_term,fixed_interest_rate,monthly_payment,time_stamp)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:703)
+	at org.h2.command.Parser.parseColumn(Parser.java:1450)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1435)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1804)
+	at org.h2.command.Parser.parseInsert(Parser.java:1749)
+	at org.h2.command.Parser.parsePrepared(Parser.java:954)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:76)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:352)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:315)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at clojure.java.jdbc$prepare_statement.invokeStatic(jdbc.clj:662)
+	at clojure.java.jdbc$prepare_statement.invoke(jdbc.clj:609)
+	at clojure.java.jdbc$db_do_prepared.invokeStatic(jdbc.clj:1051)
+	at clojure.java.jdbc$db_do_prepared.invoke(jdbc.clj:1032)
+	at clojure.java.jdbc$execute_BANG_$execute_helper__9857.invoke(jdbc.clj:1437)
+	at clojure.java.jdbc$execute_BANG_.invokeStatic(jdbc.clj:1441)
+	at clojure.java.jdbc$execute_BANG_.invoke(jdbc.clj:1408)
+	at clojure.java.jdbc$execute_BANG_.invokeStatic(jdbc.clj:1429)
+	at clojure.java.jdbc$execute_BANG_.invoke(jdbc.clj:1408)
+	at clojure.lang.AFn.applyToHelper(AFn.java:156)
+	at clojure.lang.AFn.applyTo(AFn.java:144)
+	at clojure.core$apply.invokeStatic(core.clj:669)
+	at clojure.core$apply.invoke(core.clj:660)
+	at hugsql.adapter.clojure_java_jdbc.HugsqlAdapterClojureJavaJdbc.execute(clojure_java_jdbc.clj:12)
+	at hugsql.adapter$eval10880$fn__10881$G__10860__10886.invoke(adapter.clj:3)
+	at hugsql.adapter$eval10880$fn__10881$G__10859__10892.invoke(adapter.clj:3)
+	at clojure.lang.Var.invoke(Var.java:399)
+	at hugsql.core$db_fn_STAR_$y__11319.doInvoke(core.clj:458)
+	at clojure.lang.RestFn.invoke(RestFn.java:445)
+	at hugsql.core$db_fn_STAR_$y__11319.invoke(core.clj:448)
+	at conman.core$try_query$fn__11407$fn__11408.invoke(core.clj:30)
+	at mortgag_calculator.db.core$eval13840$f__11435__auto____13867.invoke(core.clj:23)
+	at mortgag_calculator.routes.home$save_calculation_BANG_.invokeStatic(home.clj:18)
+	at mortgag_calculator.routes.home$save_calculation_BANG_.invoke(home.clj:17)
+	at muuntaja.middleware$wrap_params$fn__8231.invoke(middleware.clj:52)
+	at muuntaja.middleware$wrap_format$fn__8235.invoke(middleware.clj:73)
+	at mortgag_calculator.middleware$wrap_formats$fn__9358.invoke(middleware.clj:41)
+	at ring.middleware.anti_forgery$wrap_anti_forgery$fn__7067.invoke(anti_forgery.clj:94)
+	at reitit.ring$ring_handler$fn__15491.invoke(ring.cljc:292)
+	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+	at clojure.lang.AFn.applyTo(AFn.java:144)
+	at clojure.lang.AFunction$1.doInvoke(AFunction.java:31)
+	at clojure.lang.RestFn.invoke(RestFn.java:408)
+	at clojure.lang.Var.invoke(Var.java:384)
+	at ring.middleware.reload$wrap_reload$fn__4417.invoke(reload.clj:39)
+	at selmer.middleware$wrap_error_page$fn__4432.invoke(middleware.clj:18)
+	at prone.middleware$wrap_exceptions$fn__4673.invoke(middleware.clj:159)
+	at ring.middleware.flash$wrap_flash$fn__8473.invoke(flash.clj:39)
+	at ring.middleware.session$wrap_session$fn__8832.invoke(session.clj:108)
+	at ring.middleware.keyword_params$wrap_keyword_params$fn__8878.invoke(keyword_params.clj:53)
+	at ring.middleware.nested_params$wrap_nested_params$fn__8936.invoke(nested_params.clj:89)
+	at ring.middleware.multipart_params$wrap_multipart_params$fn__9068.invoke(multipart_params.clj:173)
+	at ring.middleware.params$wrap_params$fn__9092.invoke(params.clj:67)
+	at ring.middleware.cookies$wrap_cookies$fn__8783.invoke(cookies.clj:214)
+	at ring.middleware.absolute_redirects$wrap_absolute_redirects$fn__9278.invoke(absolute_redirects.clj:47)
+	at ring.middleware.resource$wrap_resource_prefer_resources$fn__9128.invoke(resource.clj:25)
+	at ring.middleware.content_type$wrap_content_type$fn__9226.invoke(content_type.clj:34)
+	at ring.middleware.default_charset$wrap_default_charset$fn__9250.invoke(default_charset.clj:31)
+	at ring.middleware.not_modified$wrap_not_modified$fn__9192.invoke(not_modified.clj:61)
+	at ring.middleware.x_headers$wrap_x_header$fn__8436.invoke(x_headers.clj:22)
+	at ring.middleware.x_headers$wrap_x_header$fn__8436.invoke(x_headers.clj:22)
+	at ring.middleware.x_headers$wrap_x_header$fn__8436.invoke(x_headers.clj:22)
+	at mortgag_calculator.middleware$wrap_internal_error$fn__9352.invoke(middleware.clj:20)
+	at ring.adapter.jetty$proxy_handler$fn__16683.invoke(jetty.clj:26)
+	at ring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle(Unknown Source)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:503)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+	at java.lang.Thread.run(Thread.java:748)
+2020-02-28 22:39:20 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/yangaxnkohla/Documents/DevProjects/mortgag-calculator/mortgag_calculator_dev.db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at hikari_cp.core$make_datasource.invokeStatic(core.clj:267)
+	at hikari_cp.core$make_datasource.invoke(core.clj:264)
+	at conman.core$connect_BANG_.invokeStatic(core.clj:151)
+	at conman.core$connect_BANG_.invoke(core.clj:147)
+	at mortgag_calculator.db.core$eval13829$fn__13830.invoke(core.clj:20)
+	at mount.core$record_BANG_.invokeStatic(core.cljc:74)
+	at mount.core$record_BANG_.invoke(core.cljc:73)
+	at mount.core$up$fn__433.invoke(core.cljc:81)
+	at mount.core$up.invokeStatic(core.cljc:80)
+	at mount.core$up.invoke(core.cljc:78)
+	at mount.core$bring.invokeStatic(core.cljc:247)
+	at mount.core$bring.invoke(core.cljc:239)
+	at mount.core$start.invokeStatic(core.cljc:289)
+	at mount.core$start.doInvoke(core.cljc:281)
+	at clojure.lang.RestFn.invoke(RestFn.java:397)
+	at mount.core$start_with_args.invokeStatic(core.cljc:389)
+	at mount.core$start_with_args.doInvoke(core.cljc:385)
+	at clojure.lang.RestFn.invoke(RestFn.java:410)
+	at mortgag_calculator.core$start_app.invokeStatic(core.clj:50)
+	at mortgag_calculator.core$start_app.invoke(core.clj:49)
+	at mortgag_calculator.core$_main.invokeStatic(core.clj:73)
+	at mortgag_calculator.core$_main.doInvoke(core.clj:57)
+	at clojure.lang.RestFn.invoke(RestFn.java:397)
+	at clojure.lang.Var.invoke(Var.java:380)
+	at user$eval18096.invokeStatic(form-init4245712864238905000.clj:1)
+	at user$eval18096.invoke(form-init4245712864238905000.clj:1)
+	at clojure.lang.Compiler.eval(Compiler.java:7177)
+	at clojure.lang.Compiler.eval(Compiler.java:7167)
+	at clojure.lang.Compiler.load(Compiler.java:7636)
+	at clojure.lang.Compiler.loadFile(Compiler.java:7574)
+	at clojure.main$load_script.invokeStatic(main.clj:475)
+	at clojure.main$init_opt.invokeStatic(main.clj:477)
+	at clojure.main$init_opt.invoke(main.clj:477)
+	at clojure.main$initialize.invokeStatic(main.clj:508)
+	at clojure.main$null_opt.invokeStatic(main.clj:542)
+	at clojure.main$null_opt.invoke(main.clj:539)
+	at clojure.main$main.invokeStatic(main.clj:664)
+	at clojure.main$main.doInvoke(main.clj:616)
+	at clojure.lang.RestFn.applyTo(RestFn.java:137)
+	at clojure.lang.Var.applyTo(Var.java:705)
+	at clojure.main.main(main.java:40)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/yangaxnkohla/Documents/DevProjects/mortgag-calculator/mortgag_calculator_dev.db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 70 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/yangaxnkohla/Documents/DevProjects/mortgag-calculator/mortgag_calculator_dev.db.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 64 more
+2020-02-28 22:41:47 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/yangaxnkohla/Documents/DevProjects/mortgag-calculator/mortgag_calculator_dev.db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at clojure.java.jdbc$get_connection.invokeStatic(jdbc.clj:365)
+	at clojure.java.jdbc$get_connection.invoke(jdbc.clj:257)
+	at clojure.java.jdbc$get_connection.invokeStatic(jdbc.clj:326)
+	at clojure.java.jdbc$get_connection.invoke(jdbc.clj:257)
+	at migratus.database$connect_STAR_$fn__17359.invoke(database.clj:122)
+	at migratus.database$connect_STAR_.invokeStatic(database.clj:121)
+	at migratus.database$connect_STAR_.invoke(database.clj:114)
+	at migratus.database.Database.connect(database.clj:269)
+	at migratus.core$run.invokeStatic(core.clj:25)
+	at migratus.core$run.invoke(core.clj:22)
+	at migratus.core$migrate.invokeStatic(core.clj:83)
+	at migratus.core$migrate.invoke(core.clj:78)
+	at luminus_migrations.core$fn__17527.invokeStatic(core.clj:44)
+	at luminus_migrations.core$fn__17527.invoke(core.clj:41)
+	at luminus_migrations.core$migrate.invokeStatic(core.clj:97)
+	at luminus_migrations.core$migrate.invoke(core.clj:83)
+	at mortgag_calculator.core$_main.invokeStatic(core.clj:70)
+	at mortgag_calculator.core$_main.doInvoke(core.clj:57)
+	at clojure.lang.RestFn.invoke(RestFn.java:408)
+	at clojure.lang.Var.invoke(Var.java:384)
+	at user$eval18096.invokeStatic(form-init8899846801754878376.clj:1)
+	at user$eval18096.invoke(form-init8899846801754878376.clj:1)
+	at clojure.lang.Compiler.eval(Compiler.java:7177)
+	at clojure.lang.Compiler.eval(Compiler.java:7167)
+	at clojure.lang.Compiler.load(Compiler.java:7636)
+	at clojure.lang.Compiler.loadFile(Compiler.java:7574)
+	at clojure.main$load_script.invokeStatic(main.clj:475)
+	at clojure.main$init_opt.invokeStatic(main.clj:477)
+	at clojure.main$init_opt.invoke(main.clj:477)
+	at clojure.main$initialize.invokeStatic(main.clj:508)
+	at clojure.main$null_opt.invokeStatic(main.clj:542)
+	at clojure.main$null_opt.invoke(main.clj:539)
+	at clojure.main$main.invokeStatic(main.clj:664)
+	at clojure.main$main.doInvoke(main.clj:616)
+	at clojure.lang.RestFn.applyTo(RestFn.java:137)
+	at clojure.lang.Var.applyTo(Var.java:705)
+	at clojure.main.main(main.java:40)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/yangaxnkohla/Documents/DevProjects/mortgag-calculator/mortgag_calculator_dev.db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 61 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/yangaxnkohla/Documents/DevProjects/mortgag-calculator/mortgag_calculator_dev.db.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 55 more
+2020-03-01 02:01:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "RESULTS" not found; SQL statement:
+INSERT INTO results SELECT * FROM (
+SELECT 0, ? UNION
+SELECT 1, ? UNION
+SELECT 2, ? UNION
+SELECT 3, ? UNION
+SELECT 4, ? UNION
+SELECT 5 ?
+) x WHERE NOT EXISTS(SELECT * FROM results) [42102-200]
+2020-03-01 02:01:13 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "RESULTS" not found; SQL statement:
+INSERT INTO results SELECT * FROM (
+SELECT 0, ? UNION
+SELECT 1, ? UNION
+SELECT 2, ? UNION
+SELECT 3, ? UNION
+SELECT 4, ? UNION
+SELECT 5 ?
+) x WHERE NOT EXISTS(SELECT * FROM results) [42102-200]
+2020-03-01 02:04:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "RESULTS" not found; SQL statement:
+INSERT INTO results SELECT * FROM (
+SELECT 0, ? UNION
+SELECT 1, ? UNION
+SELECT 2, ? UNION
+SELECT 3, ? UNION
+SELECT 4, ? UNION
+SELECT 5 ?
+) x WHERE NOT EXISTS(SELECT * FROM results) [42102-200]
+2020-03-01 02:13:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "RESULTS" not found; SQL statement:
+INSERT INTO results SELECT * FROM (
+SELECT 0, ? UNION
+SELECT 1, ? UNION
+SELECT 2, ? UNION
+SELECT 3, ? UNION
+SELECT 4, ? UNION
+SELECT 5 ?
+) x WHERE NOT EXISTS(SELECT * FROM results) [42102-200]
+2020-03-01 02:49:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "RESULTS" not found; SQL statement:
+INSERT INTO results SELECT * FROM (
+SELECT 0, ? UNION
+SELECT 1, ? UNION
+SELECT 2, ? UNION
+SELECT 3, ? UNION
+SELECT 4, ? UNION
+SELECT 5 ?
+) x WHERE NOT EXISTS(SELECT * FROM results) [42102-200]
+2020-03-01 02:59:33 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/yangaxnkohla/Documents/DevProjects/mortgag-calculator/mortgag_calculator_dev.db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2877)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:481)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:402)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
+	at org.h2.engine.Database.getPageStore(Database.java:2659)
+	at org.h2.engine.Database.open(Database.java:675)
+	at org.h2.engine.Database.openDatabase(Database.java:307)
+	at org.h2.engine.Database.<init>(Database.java:301)
+	at org.h2.engine.Engine.openSession(Engine.java:74)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at hikari_cp.core$make_datasource.invokeStatic(core.clj:267)
+	at hikari_cp.core$make_datasource.invoke(core.clj:264)
+	at conman.core$connect_BANG_.invokeStatic(core.clj:151)
+	at conman.core$connect_BANG_.invoke(core.clj:147)
+	at mortgag_calculator.db.core$eval13682$fn__13683.invoke(core.clj:20)
+	at mount.core$record_BANG_.invokeStatic(core.cljc:74)
+	at mount.core$record_BANG_.invoke(core.cljc:73)
+	at mount.core$up$fn__433.invoke(core.cljc:81)
+	at mount.core$up.invokeStatic(core.cljc:80)
+	at mount.core$up.invoke(core.cljc:78)
+	at mount.core$bring.invokeStatic(core.cljc:247)
+	at mount.core$bring.invoke(core.cljc:239)
+	at mount.core$start.invokeStatic(core.cljc:289)
+	at mount.core$start.doInvoke(core.cljc:281)
+	at clojure.lang.RestFn.invoke(RestFn.java:397)
+	at mount.core$start_with_args.invokeStatic(core.cljc:389)
+	at mount.core$start_with_args.doInvoke(core.cljc:385)
+	at clojure.lang.RestFn.invoke(RestFn.java:410)
+	at mortgag_calculator.core$start_app.invokeStatic(core.clj:50)
+	at mortgag_calculator.core$start_app.invoke(core.clj:49)
+	at mortgag_calculator.core$_main.invokeStatic(core.clj:73)
+	at mortgag_calculator.core$_main.doInvoke(core.clj:57)
+	at clojure.lang.RestFn.invoke(RestFn.java:397)
+	at clojure.lang.Var.invoke(Var.java:380)
+	at user$eval17952.invokeStatic(form-init3338560555631322963.clj:1)
+	at user$eval17952.invoke(form-init3338560555631322963.clj:1)
+	at clojure.lang.Compiler.eval(Compiler.java:7177)
+	at clojure.lang.Compiler.eval(Compiler.java:7167)
+	at clojure.lang.Compiler.load(Compiler.java:7636)
+	at clojure.lang.Compiler.loadFile(Compiler.java:7574)
+	at clojure.main$load_script.invokeStatic(main.clj:475)
+	at clojure.main$init_opt.invokeStatic(main.clj:477)
+	at clojure.main$init_opt.invoke(main.clj:477)
+	at clojure.main$initialize.invokeStatic(main.clj:508)
+	at clojure.main$null_opt.invokeStatic(main.clj:542)
+	at clojure.main$null_opt.invoke(main.clj:539)
+	at clojure.main$main.invokeStatic(main.clj:664)
+	at clojure.main$main.doInvoke(main.clj:616)
+	at clojure.lang.RestFn.applyTo(RestFn.java:137)
+	at clojure.lang.Var.applyTo(Var.java:705)
+	at clojure.main.main(main.java:40)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/yangaxnkohla/Documents/DevProjects/mortgag-calculator/mortgag_calculator_dev.db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 70 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/yangaxnkohla/Documents/DevProjects/mortgag-calculator/mortgag_calculator_dev.db.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 64 more
+2020-03-01 03:04:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO MORTGAGECALCULATOR SELECT * FROM (
+SELECT 0, ? UNION
+SELECT 1, ? UNION
+SELECT 2, ? UNION
+SELECT 3, ? UNION
+SELECT 4, ? UNION
+SELECT 5 ?[*]
+) X WHERE NOT EXISTS(SELECT * FROM RESULTS)"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, AS, ,, FROM, WHERE, GROUP, HAVING, WINDOW, QUALIFY, UNION, EXCEPT, MINUS, INTERSECT, ORDER, OFFSET, FETCH, LIMIT, SAMPLE_SIZE, FOR, )"; SQL statement:
+INSERT INTO mortgagecalculator SELECT * FROM (
+SELECT 0, ? UNION
+SELECT 1, ? UNION
+SELECT 2, ? UNION
+SELECT 3, ? UNION
+SELECT 4, ? UNION
+SELECT 5 ?
+) x WHERE NOT EXISTS(SELECT * FROM results) [42001-200]
+2020-03-01 03:07:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO MORTGAGECALCULATOR SELECT * FROM (
+SELECT 0, ? UNION
+SELECT 1, ? UNION
+SELECT 2, ? UNION
+SELECT 3, ? UNION
+SELECT 4, ? UNION
+SELECT 5 ?[*]
+) WHERE NOT EXISTS(SELECT * FROM RESULTS)"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, AS, ,, FROM, WHERE, GROUP, HAVING, WINDOW, QUALIFY, UNION, EXCEPT, MINUS, INTERSECT, ORDER, OFFSET, FETCH, LIMIT, SAMPLE_SIZE, FOR, )"; SQL statement:
+INSERT INTO mortgagecalculator SELECT * FROM (
+SELECT 0, ? UNION
+SELECT 1, ? UNION
+SELECT 2, ? UNION
+SELECT 3, ? UNION
+SELECT 4, ? UNION
+SELECT 5 ?
+) WHERE NOT EXISTS(SELECT * FROM results) [42001-200]

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome!</title>
+    <script src="resources/public/js/mortgag-calculator.js" type="text/javascript"></script>
+    <!-- styles -->
+    {% style "/assets/bulma/css/bulma.min.css" %}
+    {% style "/assets/material-icons/css/material-icons.min.css" %}
+
+    {% style "/css/screen.css" %}
+</head>
+<body>
+<!-- navbar -->
+<nav class="navbar is-info">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/" style="font-weight:bold;">Mortgage Calculator</a>
+            <span class="navbar-burger burger" data-target="nav-menu">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                  </span>
+        </div>
+        <div id="nav-menu" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item{% ifequal page " home.html" %} is-active{%endifequal%}">Home</a>
+                <a href="/about" class="navbar-item{% ifequal page " about.html" %} is-active{%endifequal%}">About</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="container">
+        <form method="post" action="/calculation">
+            {% csrf-field %}
+            <h1 style="font-weight: bold;font-size: large;">Welcome! Please Make Your Calculation Here</h1><br>
+            <p>
+                Purchase Price:
+                <input type="number" id="calc_purchase_price" name="purchase_price" class="form-control" step="0.01" min="1"
+                       style="margin-left: 27px"><br><br>
+            </p>
+            <p>
+                Deposit Paid:
+                <input type="number" id="calc_deposit_paid" name="deposit_paid" class="form-control" step="0.01" min="1"
+                       style="margin-left: 45px"><br><br>
+            </p>
+            <p>
+                Bond Term:
+                <input type="number" id="calc_bond_term" name="bond_term" class="form-control" step="0.01" min="1"
+                       style="margin-left: 60px"><br><br>
+            </p>
+            <p for="fixed_interest_rate">
+                Fixed Interest Rate:
+                <input type="number" id="calc_fixed_interest_rate" name="fixed_interest_rate" class="form-control"
+                       step="0.01" min="1"><br><br>
+            </p>
+            <input type="submit" value="Calculate">
+        </form>
+        <hr/>
+        <form method="post" action="/save">
+            {% csrf-field %}
+            <h1 style="font-weight: bold;font-size: large;">Here Are Your Results!</h1><br>
+            <p>Calculation Name:
+                <input type="text" id="calculation_name" name="calculation_name" class="form-control" placeholder="Calculation Name"><br><br>
+            </p>
+            <p>Purchase Price: <span id="purchase_price">{{(nth results 0)}}</span><br><br></p>
+            <p>Deposit Paid: <span id="deposit_paid">{{(nth results 1)}}</span><br><br></p>
+            <p>Bond Term: <span id="bond_term">{{(nth results 2)}}</span><br><br></p>
+            <p>Fixed Interest Rate: <span id="fixed_interest_rate">{{(nth results 3)}}</span><br><br></p>
+            <p>Monthly Payment: <span id="monthly_payment">{{(nth results 4)}}</span><br><br></p>
+            <input type="submit" value="Save">
+        </form>
+        <hr/>
+        <form>
+            <h1 style="font-weight: bold;font-size: large;">Previous Calculations</h1><br>
+            <ul class="content">
+                {% for item in calculations %}
+                <li>
+                    <time><span>{{item.timestamp|date:"yyyy-MM-dd HH:mm"}}</span></time>
+                    <p>Calculation Name: <span>{{item.calculation_name}}</span></p>
+                    <p>Purchase Amount: <span>{{item.purchase_amount}}</span></p>
+                    <p>Deposit Paid: <span>{{item.deposit_amount}}</span></p>
+                    <p>Bond Term: <span>{{item.bond_term}}</span></p>
+                    <p>Fixed Interest Rate: <span>{{item.fixed_interest_rate}}</span></p>
+                    <hr/>
+                </li>
+                {% endfor %}
+            </ul>
+        </form>
+    </div>
+</section>
+
+<!-- scripts -->
+<script type="text/javascript">
+    (function () {
+        var burger = document.querySelector('.burger');
+        var nav = document.querySelector('#' + burger.dataset.target);
+        burger.addEventListener('click', function () {
+            burger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+        });
+    })();
+</script>
+
+<script src="resources/public/js/mortgag-calculator.js" type="text/javascript"></script>
+
+{% block page-scripts %}
+{% endblock %}
+</body>
+</html>
