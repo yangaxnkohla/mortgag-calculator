@@ -12,79 +12,110 @@
     {% style "/css/screen.css" %}
 </head>
 <body>
-<!-- navbar -->
-<nav class="navbar is-info">
-    <div class="container">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/" style="font-weight:bold;">Mortgage Calculator</a>
-            <span class="navbar-burger burger" data-target="nav-menu">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                  </span>
-        </div>
-        <div id="nav-menu" class="navbar-menu">
-            <div class="navbar-start">
-                <a href="/" class="navbar-item{% ifequal page " home.html" %} is-active{%endifequal%}">Home</a>
-                <a href="/about" class="navbar-item{% ifequal page " about.html" %} is-active{%endifequal%}">About</a>
-            </div>
-        </div>
+
+<a href="/" class="home_float"></a>
+
+<a href="#calculationForm" class="calculation_float">Calculate</a>
+
+<a href="#saveForm" class="save_float">Save</a>
+
+<a href="#historyForm" class="history_float">History</a>
+
+<section class="nav-img">
+    <div class="nav-div">
+        <a href="#calculationForm"><span class="scroll-button">↓</span></a>
+        <img src="/img/make_money_with_stocks.jpeg" class="parallax"/>
     </div>
-</nav>
+</section>
 
 <section class="section">
     <div class="container">
-        <form method="post" action="/calculation">
+        <form id="calculationForm" method="get" action="/calculation" class="card">
             {% csrf-field %}
             <h1 style="font-weight: bold;font-size: large;">Welcome! Please Make Your Calculation Here</h1><br>
             <p>
                 Purchase Price:
-                <input type="number" id="calc_purchase_price" name="purchase_price" class="form-control" step="0.01" min="1"
-                       style="margin-left: 27px"><br><br>
+                <input type="number" id="calc_purchase_price" name="purchase_price" class="form-control" step="0.01"
+                       min="1"
+                       style="margin-left: 58px" required><br><br>
             </p>
             <p>
                 Deposit Paid:
-                <input type="number" id="calc_deposit_paid" name="deposit_paid" class="form-control" step="0.01" min="1"
-                       style="margin-left: 45px"><br><br>
+                <input type="number" id="calc_deposit_paid" name="deposit_paid" class="form-control" step="0.01"
+                       min="1"
+                       style="margin-left: 75px" required><br><br>
             </p>
             <p>
-                Bond Term:
-                <input type="number" id="calc_bond_term" name="bond_term" class="form-control" step="0.01" min="1"
-                       style="margin-left: 60px"><br><br>
+                Bond Term (Years):
+                <input type="number" id="calc_bond_term" name="bond_term" class="form-control" min="1"
+                       style="margin-left: 33px" required><br><br>
             </p>
-            <p for="fixed_interest_rate">
-                Fixed Interest Rate:
+            <p>
+                Fixed Interest Rate (%):
                 <input type="number" id="calc_fixed_interest_rate" name="fixed_interest_rate" class="form-control"
-                       step="0.01" min="1"><br><br>
+                       step="0.01" min="1" required><br><br>
             </p>
-            <input type="submit" value="Calculate">
+            <input id="calculate" type="submit" value="Calculate" style="width: 150px">
         </form>
         <hr/>
-        <form method="post" action="/save">
+        <form id="saveForm" method="post" action="/save" class="card">
             {% csrf-field %}
             <h1 style="font-weight: bold;font-size: large;">Here Are Your Results!</h1><br>
             <p>Calculation Name:
-                <input type="text" id="calculation_name" name="calculation_name" class="form-control" placeholder="Calculation Name"><br><br>
+                <input type="text" id="calculation_name" name="calculation_name" class="form-control"
+                       placeholder="Calculation Name" maxlength="30" style="margin-left: 40px" required><br><br>
             </p>
-            <p>Purchase Price: <span id="purchase_price">{{(nth results 0)}}</span><br><br></p>
-            <p>Deposit Paid: <span id="deposit_paid">{{(nth results 1)}}</span><br><br></p>
-            <p>Bond Term: <span id="bond_term">{{(nth results 2)}}</span><br><br></p>
-            <p>Fixed Interest Rate: <span id="fixed_interest_rate">{{(nth results 3)}}</span><br><br></p>
-            <p>Monthly Payment: <span id="monthly_payment">{{(nth results 4)}}</span><br><br></p>
-            <input type="submit" value="Save">
+            <p>Purchase Price:
+                <input type="text" id="res_purchase_price" name="res_purchase_price" class="form-control readonly"
+                       style="margin-left: 58px" value="{{purchase_price}}" readonly="readonly" required>
+                <br><br></p>
+            <p>Deposit Paid:
+                <input type="text" id="res_deposit_paid" name="res_deposit_paid" class="form-control readonly"
+                       style="margin-left: 75px" value="{{deposit_paid}}" readonly="readonly" required>
+                <br><br></p>
+            <p>Bond Term (Years):
+                <input type="text" id="res_bond_term" name="res_bond_term" class="form-control readonly"
+                       style="margin-left: 33px" value="{{bond_term}}" readonly="readonly" required><br><br></p>
+            <p>Fixed Interest Rate (%):
+                <input type="text" id="res_fixed_interest_rate" name="res_fixed_interest_rate"
+                       class="form-control readonly" value="{{fixed_interest_rate}}"
+                       readonly="readonly" required>
+                <br><br>
+            </p>
+            <p>Monthly Payment:
+                <input type="text" id="res_monthly_payment" name="res_monthly_payment" class="form-control readonly"
+                       style="margin-left: 40px" value="{{monthly_payment}}" readonly="readonly" required><br><br>
+            </p>
+            <input type="submit" value="Save" style="width: 150px">
         </form>
         <hr/>
-        <form>
-            <h1 style="font-weight: bold;font-size: large;">Previous Calculations</h1><br>
+        <form id="historyForm" class="card">
+            <h1 style="font-weight: bold;font-size: large;">Previous Calculations</h1>
             <ul class="content">
                 {% for item in calculations %}
                 <li>
-                    <time><span>{{item.timestamp|date:"yyyy-MM-dd HH:mm"}}</span></time>
-                    <p>Calculation Name: <span>{{item.calculation_name}}</span></p>
-                    <p>Purchase Amount: <span>{{item.purchase_amount}}</span></p>
-                    <p>Deposit Paid: <span>{{item.deposit_amount}}</span></p>
-                    <p>Bond Term: <span>{{item.bond_term}}</span></p>
-                    <p>Fixed Interest Rate: <span>{{item.fixed_interest_rate}}</span></p>
+                    <time>
+                        <output>{{item.timestamp|date:"yyyy-MM-dd HH:mm"}}</output>
+                    </time>
+                    <br>
+                    <p>Calculation Name:
+                        <output>{{item.calculation_name}}</output>
+                    </p>
+                    <p>Purchase Amount:
+                        <output>{{item.purchase_price}}</output>
+                    </p>
+                    <p>Deposit Paid:
+                        <output>{{item.deposit_paid}}</output>
+                    </p>
+                    <p>Bond Term:
+                        <output>{{item.bond_term}}</output>
+                    </p>
+                    <p>Fixed Interest Rate:
+                        <output>{{item.fixed_interest_rate}}</output>
+                    </p>
+                    <p>Monthly Payment:
+                        <output>{{item.monthly_payment}}</output>
+                    </p>
                     <hr/>
                 </li>
                 {% endfor %}
@@ -104,8 +135,6 @@
         });
     })();
 </script>
-
-<script src="resources/public/js/mortgag-calculator.js" type="text/javascript"></script>
 
 {% block page-scripts %}
 {% endblock %}

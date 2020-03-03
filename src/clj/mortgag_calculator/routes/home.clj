@@ -6,21 +6,23 @@
       [mortgag-calculator.middleware :as middleware]
       [ring.util.anti-forgery :refer [anti-forgery-field]]
       [ring.util.response]
-      [ring.util.http-response :as response])
-    (:gen-class)
-    (:import '[mortgag-calculator.cljs.home]))
+      [ring.util.http-response :as response]
+      [cljs.core :as cljs])
+    (:gen-class))
 
 (defn home-page [request]
+  (println "---> [Calculations]: " (db/get-calculations))
   (layout/render request "home.html"
                  {:calculations (db/get-calculations)}))
 
 ; perform the calculation
-(defn calculate! [{:keys [params]}]
+(defn calculate [{:keys [params]}]
 
-  (println "---> fixed_interest_rate: " (:fixed_interest_rate params))
+  (println "[Calculate]: ")
   (println "---> purchase_price: " (:purchase_price params))
-  (println "---> bond_term: " (:bond_term params))
   (println "---> deposit_paid: " (:deposit_paid params))
+  (println "---> fixed_interest_rate: " (:fixed_interest_rate params))
+  (println "---> bond_term: " (:bond_term params))
 
   ; evaluate the numerator of the equation
   (def nume_rator
@@ -45,18 +47,33 @@
   (println "---> Result: " monthly_payment)
 
   ; set the html element values
-  (cljs/set-element-text "purchase_price" (:purchase_price params))
-  (cljs/set-element-text "deposit_paid" (:deposit_paid params))
-  (cljs/set-element-text "bond_term" (:bond_term params))
-  (cljs/set-element-text "fixed_interest_rate" (:fixed_interest_rate params))
-  (cljs/set-element-text "monthly_payment" (:monthly_payment params))
-
-  (response/found "/"))
+  (layout/render params "home.html"
+                 {:purchase_price      (:purchase_price params)
+                  :deposit_paid        (:deposit_paid params)
+                  :bond_term           (:bond_term params)
+                  :fixed_interest_rate (:fixed_interest_rate params)
+                  :monthly_payment     monthly_payment}))
 
 ; insert calculation into database
 (defn save-calculation! [{:keys [params]}]
+
+  (println "[Save]: ")
+  (println "---> calculation_name: " (:calculation_name params))
+  (println "---> purchase_price: " (:res_purchase_price params))
+  (println "---> deposit_paid: " (:res_deposit_paid params))
+  (println "---> fixed_interest_rate: " (:res_fixed_interest_rate params))
+  (println "---> bond_term: " (:res_bond_term params))
+  (println "---> Result: " (:res_monthly_payment params))
+
   (db/save-calculation!
-   (assoc params :id 1, :calculation_name params, :purchase_price params, :deposit_paid params, :bond_term params, :fixed_interest_rate params, :timestamp (java.util.Date.)))
+   (assoc params
+          :calculation_name    (:calculation_name params),
+          :purchase_price      (Double/parseDouble  (:res_purchase_price params)),
+          :deposit_paid        (Double/parseDouble (:res_deposit_paid params)),
+          :bond_term           (Integer/parseInt (:res_bond_term params)),
+          :fixed_interest_rate (Double/parseDouble (:res_fixed_interest_rate params)),
+          :monthly_payment     (Double/parseDouble  (:res_monthly_payment params)),
+          :timestamp           (java.util.Date.)))
   (response/found "/"))
 
 (defn base-page [request]
@@ -71,7 +88,6 @@
    {:middleware [middleware/wrap-csrf
                  middleware/wrap-formats]}
    ["/" {:get home-page}]
-   ["/about" {:get about-page}]
-   ["/calculation" {:post calculate!}]
+   ["/calculation" {:get calculate}]
    ["/save" {:post save-calculation!}]])
 

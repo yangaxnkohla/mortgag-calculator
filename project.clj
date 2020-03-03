@@ -31,7 +31,11 @@
                  [ring-webjars "0.2.0"]
                  [ring/ring-core "1.8.0"]
                  [ring/ring-defaults "0.3.2"]
-                 [selmer "1.12.18"]]
+                 [selmer "1.12.18"]
+                 [reagent "0.9.1"]
+                 [lein-npm "0.6.1"]
+                 [lein-cljsbuild "1.0.5"]
+                 [cljsjs/react "16.13.0-0"]]
 
   :min-lein-version "2.0.0"
 

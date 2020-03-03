@@ -1,10 +1,13 @@
 -- :name save-calculation! :! :n
 -- :doc creates a new calculation record
 INSERT INTO mortgagecalculator
-(id, calculation_name, purchase_price, deposit_paid, bond_term,fixed_interest_rate,monthly_payment,timestamp)
-VALUES (:id, :calculation_name, :purchase_price, :deposit_paid, :bond_term, :fixed_interest_rate, :monthly_payment, :timestamp)
+(calculation_name, purchase_price, deposit_paid, bond_term,fixed_interest_rate,monthly_payment,timestamp)
+VALUES (:calculation_name, :purchase_price, :deposit_paid, :bond_term, :fixed_interest_rate, :monthly_payment, :timestamp)
+--INSERT INTO mortgagecalculator
+--(id, calculation_name, purchase_price, deposit_paid, bond_term,fixed_interest_rate,monthly_payment,timestamp)
+--VALUES (:id, :calculation_name, :purchase_price, :deposit_paid, :bond_term, :fixed_interest_rate, :monthly_payment, :timestamp)
 
--- :name get-calculations :? :1
+-- :name get-calculations :? :*
 -- :doc retrieves all calculation records
 SELECT * FROM mortgagecalculator
 
