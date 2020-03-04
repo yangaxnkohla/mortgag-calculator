@@ -13,13 +13,13 @@
 </head>
 <body>
 
-<a href="/" class="home_float"></a>
+<a href="/" class="home_float"><img src="/img/home.svg" style="size: 20px"/></a>
 
-<a href="#calculationForm" class="calculation_float">Calculate</a>
+<a href="#calculationForm" class="calculation_float"><img src="/img/calculator.svg" style="size: 20px"/></a>
 
-<a href="#saveForm" class="save_float">Save</a>
+<a href="#saveForm" class="save_float"><img src="/img/save.svg" style="size: 5px"/></a>
 
-<a href="#historyForm" class="history_float">History</a>
+<a href="#historyForm" class="history_float"><img src="/img/history.svg" style="size: 5px"/></a>
 
 <section class="nav-img">
     <div class="nav-div">
@@ -36,24 +36,22 @@
             <p>
                 Purchase Price:
                 <input type="number" id="calc_purchase_price" name="purchase_price" class="form-control" step="0.01"
-                       min="1"
-                       style="margin-left: 58px" required><br><br>
+                       min="1" max="15314700000" style="margin-left: 58px" required><br><br>
             </p>
             <p>
                 Deposit Paid:
                 <input type="number" id="calc_deposit_paid" name="deposit_paid" class="form-control" step="0.01"
-                       min="1"
-                       style="margin-left: 75px" required><br><br>
+                       min="1" max="15314700000" style="margin-left: 75px" required><br><br>
             </p>
             <p>
                 Bond Term (Years):
-                <input type="number" id="calc_bond_term" name="bond_term" class="form-control" min="1"
+                <input type="number" id="calc_bond_term" name="bond_term" class="form-control" min="1" max="100"
                        style="margin-left: 33px" required><br><br>
             </p>
             <p>
                 Fixed Interest Rate (%):
                 <input type="number" id="calc_fixed_interest_rate" name="fixed_interest_rate" class="form-control"
-                       step="0.01" min="1" required><br><br>
+                       step="0.01" min="1" max="100" required><br><br>
             </p>
             <input id="calculate" type="submit" value="Calculate" style="width: 150px">
         </form>

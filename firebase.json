@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "mortgage-calculator",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

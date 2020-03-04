@@ -142,12 +142,13 @@ hr {
     height:60px;
     bottom:280px;
     right:40px;
-    background: url("/img/home.svg");
-    background-size: 40px;
-    background-color:#4CAF50;
+    background-size: 20px;
+    /*background-color:#4CAF50;*/
+    background-position: center;
+    background-attachment: fixed;
     align-content: center;
     color:#FFF;
-    border-radius:50px;
+    /*border-radius:50px;*/
     text-align:center;
     box-shadow: 2px 2px 3px #999;
     align-items: center;
@@ -160,11 +161,11 @@ hr {
     height:60px;
     bottom:200px;
     right:40px;
-    background-size: 40px;
-    background-color:#4CAF50;
+    background-size: 20px;
+    /*background-color:#4CAF50;*/
     align-content: center;
     color:#FFF;
-    border-radius:50px;
+    /*border-radius:50px;*/
     text-align:center;
     box-shadow: 2px 2px 3px #999;
     align-items: center;
@@ -177,13 +178,13 @@ hr {
     height:60px;
     bottom:120px;
     right:40px;
-    background-size: 40px;
-    background-color:#4CAF50;
+    background-size: 20px;
+    /*background-color:#4CAF50;*/
     align-content: center;
     color:#FFF;
-    border-radius:50px;
+    /*border-radius:50px;*/
     text-align:center;
-    box-shadow: 2px 2px 3px #999;
+    box-shadow: 2px 2px 3px rgba(239, 232, 232, 0.87);
     align-items: center;
     background-repeat: no-repeat;
 }
@@ -194,11 +195,11 @@ hr {
     height:60px;
     bottom:40px;
     right:40px;
-    background-size: 40px;
-    background-color:#4CAF50;
+    background-size: 100px;
+    /*background-color:#4CAF50;*/
     align-content: center;
     color:#FFF;
-    border-radius:50px;
+    /*border-radius:50px;*/
     text-align:center;
     box-shadow: 2px 2px 3px #999;
     align-items: center;
@@ -206,8 +207,7 @@ hr {
 }
 
 .my-float{
-    margin-top:22px;
-    align-items: center;
+    size: 40px;
 }
 
 

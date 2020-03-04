@@ -52,7 +52,7 @@
                   :deposit_paid        (:deposit_paid params)
                   :bond_term           (:bond_term params)
                   :fixed_interest_rate (:fixed_interest_rate params)
-                  :monthly_payment     monthly_payment}))
+                  :monthly_payment     (format "%.2f" monthly_payment)}))
 
 ; insert calculation into database
 (defn save-calculation! [{:keys [params]}]
