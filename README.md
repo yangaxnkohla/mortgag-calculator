@@ -29,12 +29,15 @@ If all went accordingly you should be able to perform calculations and get your 
 
 ## Code
 
-The Clojure code used for doing calculations can be found in '/src/clj/mortgag_calculator/routes/home.clj'.
+The Clojure code used for doing calculations can be found in 
+* /src/clj/mortgag_calculator/routes/home.clj
 
-The HTML page can be found in '/resources/html/base.html'.
+The HTML page can be found in 
+* /resources/html/base.html
 
-The scripts for creating the database can be found in '/resources/migrations/..'
+The scripts for creating the database can be found in 
+* /resources/migrations/..
 
-Finally, the sql queries saving and getting calculations can be found in '/resources/sql/queries.sql'.
-
+Finally, the sql queries saving and getting calculations can be found in 
+* /resources/sql/queries.sql
 ***
