@@ -12,7 +12,7 @@ Java OpenJDK 1.8.0.232
 
 Git
 
-WebStorm (or IntelliJ or Visual Studio Code)
+WebStorm (or IntelliJ/Visual Studio Code)
 
 ## Running
 
