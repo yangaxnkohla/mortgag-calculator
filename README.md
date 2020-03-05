@@ -16,7 +16,8 @@ WebStorm (or IntelliJ or Visual Studio Code)
 
 ## Running
 
-First, you must clone the dev_cljs branch into your local machine. (git clone https://github.com/yangaxnkohla/mortgag-calculator.git)
+First, you must clone the dev_cljs branch into your local machine. 
+* git clone https://github.com/yangaxnkohla/mortgag-calculator.git *
 
 To start a web server for the application, in your favourite IDE -> cd ../mortagag-calculator into the project and run the following command in the terminal:
 
