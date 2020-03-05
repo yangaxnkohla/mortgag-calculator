@@ -12,7 +12,7 @@
 
 (defn home-page [request]
   (println "---> [Calculations]: " (db/get-calculations))
-  (layout/render request "home.html"
+  (layout/render request "index.html"
                  {:calculations (db/get-calculations)}))
 
 ; perform the calculation
@@ -47,7 +47,7 @@
   (println "---> Result: " monthly_payment)
 
   ; set the html element values
-  (layout/render params "home.html"
+  (layout/render params "index.html"
                  {:purchase_price      (:purchase_price params)
                   :deposit_paid        (:deposit_paid params)
                   :bond_term           (:bond_term params)

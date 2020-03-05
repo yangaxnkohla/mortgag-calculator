@@ -147,10 +147,10 @@ hr {
     background-position: center;
     background-attachment: fixed;
     align-content: center;
-    color:#FFF;
+    color:#4CAF50;
     /*border-radius:50px;*/
     text-align:center;
-    box-shadow: 2px 2px 3px #999;
+    box-shadow: 2px 2px 3px #4CAF50;
     align-items: center;
     background-repeat: no-repeat;
 }
@@ -164,10 +164,10 @@ hr {
     background-size: 20px;
     /*background-color:#4CAF50;*/
     align-content: center;
-    color:#FFF;
+    color:#4CAF50;
     /*border-radius:50px;*/
     text-align:center;
-    box-shadow: 2px 2px 3px #999;
+    box-shadow: 2px 2px 3px #4CAF50;
     align-items: center;
     background-repeat: no-repeat;
 }
@@ -181,10 +181,11 @@ hr {
     background-size: 20px;
     /*background-color:#4CAF50;*/
     align-content: center;
-    color:#FFF;
+    color:#4CAF50;
     /*border-radius:50px;*/
     text-align:center;
-    box-shadow: 2px 2px 3px rgba(239, 232, 232, 0.87);
+    /*box-shadow: 2px 2px 3px rgba(239, 232, 232, 0.87);*/
+    box-shadow: 2px 2px 3px #4CAF50;
     align-items: center;
     background-repeat: no-repeat;
 }
@@ -198,10 +199,10 @@ hr {
     background-size: 100px;
     /*background-color:#4CAF50;*/
     align-content: center;
-    color:#FFF;
+    color:#4CAF50;
     /*border-radius:50px;*/
     text-align:center;
-    box-shadow: 2px 2px 3px #999;
+    box-shadow: 2px 2px 3px #4CAF50;
     align-items: center;
     background-repeat: no-repeat;
 }
