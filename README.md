@@ -16,7 +16,7 @@ WebStorm (or IntelliJ or Visual Studio Code)
 
 ## Running
 
-First, you must clone the dev_cljs branch into your local machine. 
+First, you must clone the dev_cljs branch into your local machine: 
 * git clone https://github.com/yangaxnkohla/mortgag-calculator.git 
 
 To start a web server for the application, in your favourite IDE -> 'cd ../mortagag-calculator' into the project and run the following command in the terminal:
@@ -29,15 +29,15 @@ If all went accordingly you should be able to perform calculations and get your 
 
 ## Code
 
-The Clojure code used for doing calculations can be found in 
+The Clojure code used for doing calculations can be found in: 
 * /src/clj/mortgag_calculator/routes/home.clj
 
-The HTML page can be found in 
+The HTML page can be found in: 
 * /resources/html/base.html
 
-The scripts for creating the database can be found in 
+The scripts for creating the database can be found in: 
 * /resources/migrations/..
 
-Finally, the sql queries saving and getting calculations can be found in 
+Finally, the sql queries saving and getting calculations can be found in: 
 * /resources/sql/queries.sql
 ***
