@@ -41,7 +41,7 @@
 
   :node-dependencies [[source-map-support "0.2.8"]]
 
-  :jvm-opts ^:replace ["-Xmx500m" "-server"]
+  :jvm-opts ^:replace ["-Xmx300m" "-server"]
 
   :source-paths ["src/clj"]
   :test-paths ["test/clj"]
