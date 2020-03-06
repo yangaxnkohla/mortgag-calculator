@@ -88,7 +88,7 @@
         </form>
         <hr/>
         <form id="historyForm" class="card">
-            <h1 style="font-weight: bold;font-size: large;">Previous Calculations</h1>
+            <h1 style="font-weight: bold;font-size: large;">Previous Calculations</h1><br>
             <ul class="content">
                 {% for item in calculations %}
                 <li>
@@ -96,22 +96,22 @@
                         <output>{{item.timestamp|date:"yyyy-MM-dd HH:mm"}}</output>
                     </time>
                     <br>
-                    <p>Calculation Name:
+                    <p><b>Calculation Name:</b>
                         <output>{{item.calculation_name}}</output>
                     </p>
-                    <p>Purchase Amount:
+                    <p><b>Purchase Amount:</b>
                         <output>{{item.purchase_price}}</output>
                     </p>
-                    <p>Deposit Paid:
+                    <p><b>Deposit Paid:</b>
                         <output>{{item.deposit_paid}}</output>
                     </p>
-                    <p>Bond Term:
+                    <p><b>Bond Term:</b>
                         <output>{{item.bond_term}}</output>
                     </p>
-                    <p>Fixed Interest Rate:
+                    <p><b>Fixed Interest Rate:</b>
                         <output>{{item.fixed_interest_rate}}</output>
                     </p>
-                    <p>Monthly Payment:
+                    <p><b>Monthly Payment:</b>
                         <output>{{item.monthly_payment}}</output>
                     </p>
                     <hr/>

@@ -1,119 +1,17 @@
-2020-03-05 00:27:29,854 [main] INFO  mortgag-calculator.env - 
+2020-03-06 20:13:07,527 [main] INFO  mortgag-calculator.env - 
 -=[mortgag-calculator started successfully using the development profile]=- 
-2020-03-05 00:27:32,400 [main] INFO  luminus.http-server - server started on port 3000 
-2020-03-05 00:27:32,402 [main] INFO  mortgag-calculator.nrepl - starting nREPL server on port 7000 
-2020-03-05 00:27:32,454 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* started 
-2020-03-05 00:27:32,455 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app started 
-2020-03-05 00:27:32,456 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/app-routes started 
-2020-03-05 00:27:32,457 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server started 
-2020-03-05 00:27:32,457 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server started 
-2020-03-05 00:30:53,189 [Thread-10] INFO  mortgag-calculator.nrepl - nREPL server stopped 
-2020-03-05 00:30:53,234 [Thread-10] INFO  luminus.http-server - HTTP server stopped 
-2020-03-05 00:30:53,235 [Thread-10] INFO  mortgag-calculator.env - 
+2020-03-06 20:13:11,869 [main] INFO  luminus.http-server - server started on port 3000 
+2020-03-06 20:13:11,871 [main] INFO  mortgag-calculator.nrepl - starting nREPL server on port 7000 
+2020-03-06 20:13:11,927 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* started 
+2020-03-06 20:13:11,928 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app started 
+2020-03-06 20:13:11,929 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/app-routes started 
+2020-03-06 20:13:11,930 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server started 
+2020-03-06 20:13:11,930 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server started 
+2020-03-06 20:19:55,667 [Thread-10] INFO  mortgag-calculator.nrepl - nREPL server stopped 
+2020-03-06 20:19:55,867 [Thread-10] INFO  luminus.http-server - HTTP server stopped 
+2020-03-06 20:19:55,868 [Thread-10] INFO  mortgag-calculator.env - 
 -=[mortgag-calculator has shut down successfully]=- 
-2020-03-05 00:30:53,250 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server stopped 
-2020-03-05 00:30:53,251 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server stopped 
-2020-03-05 00:30:53,251 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app stopped 
-2020-03-05 00:30:53,251 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* stopped 
-2020-03-05 19:14:08,435 [main] INFO  mortgag-calculator.env - 
--=[mortgag-calculator started successfully using the development profile]=- 
-2020-03-05 19:14:09,922 [main] INFO  luminus.http-server - server started on port 3000 
-2020-03-05 19:14:09,923 [main] INFO  mortgag-calculator.nrepl - starting nREPL server on port 7000 
-2020-03-05 19:14:09,956 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* started 
-2020-03-05 19:14:09,957 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app started 
-2020-03-05 19:14:09,957 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/app-routes started 
-2020-03-05 19:14:09,957 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server started 
-2020-03-05 19:14:09,957 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server started 
-2020-03-05 19:17:00,909 [main] ERROR com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization. 
-org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-	at org.h2.message.DbException.get(DbException.java:194)
-	at org.h2.mvstore.db.MVTableEngine$Store.convertIllegalStateException(MVTableEngine.java:206)
-	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:182)
-	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:103)
-	at org.h2.engine.Database.getPageStore(Database.java:2659)
-	at org.h2.engine.Database.open(Database.java:675)
-	at org.h2.engine.Database.openDatabase(Database.java:307)
-	at org.h2.engine.Database.<init>(Database.java:301)
-	at org.h2.engine.Engine.openSession(Engine.java:74)
-	at org.h2.engine.Engine.openSession(Engine.java:192)
-	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
-	at org.h2.engine.Engine.createSession(Engine.java:166)
-	at org.h2.engine.Engine.createSession(Engine.java:29)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
-	at org.h2.Driver.connect(Driver.java:69)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
-	at hikari_cp.core$make_datasource.invokeStatic(core.clj:267)
-	at hikari_cp.core$make_datasource.invoke(core.clj:264)
-	at conman.core$connect_BANG_.invokeStatic(core.clj:151)
-	at conman.core$connect_BANG_.invoke(core.clj:147)
-	at mortgag_calculator.db.core$eval13682$fn__13683.invoke(core.clj:20)
-	at mount.core$record_BANG_.invokeStatic(core.cljc:74)
-	at mount.core$record_BANG_.invoke(core.cljc:73)
-	at mount.core$up$fn__433.invoke(core.cljc:81)
-	at mount.core$up.invokeStatic(core.cljc:80)
-	at mount.core$up.invoke(core.cljc:78)
-	at mount.core$bring.invokeStatic(core.cljc:247)
-	at mount.core$bring.invoke(core.cljc:239)
-	at mount.core$start.invokeStatic(core.cljc:289)
-	at mount.core$start.doInvoke(core.cljc:281)
-	at clojure.lang.RestFn.invoke(RestFn.java:397)
-	at mount.core$start_with_args.invokeStatic(core.cljc:389)
-	at mount.core$start_with_args.doInvoke(core.cljc:385)
-	at clojure.lang.RestFn.invoke(RestFn.java:410)
-	at mortgag_calculator.core$start_app.invokeStatic(core.clj:50)
-	at mortgag_calculator.core$start_app.invoke(core.clj:49)
-	at mortgag_calculator.core$_main.invokeStatic(core.clj:73)
-	at mortgag_calculator.core$_main.doInvoke(core.clj:57)
-	at clojure.lang.RestFn.invoke(RestFn.java:397)
-	at clojure.lang.Var.invoke(Var.java:380)
-	at user$eval17973.invokeStatic(form-init8813257082746381921.clj:1)
-	at user$eval17973.invoke(form-init8813257082746381921.clj:1)
-	at clojure.lang.Compiler.eval(Compiler.java:7177)
-	at clojure.lang.Compiler.eval(Compiler.java:7167)
-	at clojure.lang.Compiler.load(Compiler.java:7636)
-	at clojure.lang.Compiler.loadFile(Compiler.java:7574)
-	at clojure.main$load_script.invokeStatic(main.clj:475)
-	at clojure.main$init_opt.invokeStatic(main.clj:477)
-	at clojure.main$init_opt.invoke(main.clj:477)
-	at clojure.main$initialize.invokeStatic(main.clj:508)
-	at clojure.main$null_opt.invokeStatic(main.clj:542)
-	at clojure.main$null_opt.invoke(main.clj:539)
-	at clojure.main$main.invokeStatic(main.clj:664)
-	at clojure.main$main.doInvoke(main.clj:616)
-	at clojure.lang.RestFn.applyTo(RestFn.java:137)
-	at clojure.lang.Var.applyTo(Var.java:705)
-	at clojure.main.main(main.java:40)
-Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/yangaxnkohla/Documents/DevProjects/mortgag-calculator/mortgag_calculator_dev.db.mv.db [1.4.200/7]
-	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
-	at org.h2.mvstore.FileStore.open(FileStore.java:172)
-	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
-	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3579)
-	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:170)
-	... 62 common frames omitted
-2020-03-05 19:22:28,892 [main] INFO  mortgag-calculator.env - 
--=[mortgag-calculator started successfully using the development profile]=- 
-2020-03-05 19:22:30,342 [main] INFO  luminus.http-server - server started on port 3000 
-2020-03-05 19:22:30,346 [main] INFO  mortgag-calculator.nrepl - starting nREPL server on port 7000 
-2020-03-05 19:22:30,380 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* started 
-2020-03-05 19:22:30,380 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app started 
-2020-03-05 19:22:30,381 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/app-routes started 
-2020-03-05 19:22:30,381 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server started 
-2020-03-05 19:22:30,381 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server started 
-2020-03-05 19:43:05,994 [Thread-10] INFO  mortgag-calculator.nrepl - nREPL server stopped 
-2020-03-05 19:43:06,068 [Thread-10] INFO  luminus.http-server - HTTP server stopped 
-2020-03-05 19:43:06,069 [Thread-10] INFO  mortgag-calculator.env - 
--=[mortgag-calculator has shut down successfully]=- 
-2020-03-05 19:43:06,097 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server stopped 
-2020-03-05 19:43:06,097 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server stopped 
-2020-03-05 19:43:06,097 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app stopped 
-2020-03-05 19:43:06,098 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* stopped 
+2020-03-06 20:19:55,878 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server stopped 
+2020-03-06 20:19:55,879 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server stopped 
+2020-03-06 20:19:55,879 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app stopped 
+2020-03-06 20:19:55,880 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* stopped 
