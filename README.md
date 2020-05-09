@@ -1,4 +1,4 @@
-# mortgag-calculator
+# Mortgage Calculator
 
 A mortgage calculator built using Luminus version "3.57" (https://luminusweb.com/)
 
