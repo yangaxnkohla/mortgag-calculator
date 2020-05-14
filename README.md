@@ -1,4 +1,4 @@
-# mortgag-calculator
+# Mortgage Calculator
 
 ![alt text](resources/public/img/make_money_with_stocks.jpeg)
 
