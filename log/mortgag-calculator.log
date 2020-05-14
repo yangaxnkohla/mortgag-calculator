@@ -1,17 +1,17 @@
-2020-03-06 20:13:07,527 [main] INFO  mortgag-calculator.env - 
+2020-04-19 18:16:18,032 [main] INFO  mortgag-calculator.env - 
 -=[mortgag-calculator started successfully using the development profile]=- 
-2020-03-06 20:13:11,869 [main] INFO  luminus.http-server - server started on port 3000 
-2020-03-06 20:13:11,871 [main] INFO  mortgag-calculator.nrepl - starting nREPL server on port 7000 
-2020-03-06 20:13:11,927 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* started 
-2020-03-06 20:13:11,928 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app started 
-2020-03-06 20:13:11,929 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/app-routes started 
-2020-03-06 20:13:11,930 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server started 
-2020-03-06 20:13:11,930 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server started 
-2020-03-06 20:19:55,667 [Thread-10] INFO  mortgag-calculator.nrepl - nREPL server stopped 
-2020-03-06 20:19:55,867 [Thread-10] INFO  luminus.http-server - HTTP server stopped 
-2020-03-06 20:19:55,868 [Thread-10] INFO  mortgag-calculator.env - 
+2020-04-19 18:16:19,443 [main] INFO  luminus.http-server - server started on port 3000 
+2020-04-19 18:16:19,449 [main] INFO  mortgag-calculator.nrepl - starting nREPL server on port 7000 
+2020-04-19 18:16:19,490 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* started 
+2020-04-19 18:16:19,493 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app started 
+2020-04-19 18:16:19,497 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/app-routes started 
+2020-04-19 18:16:19,498 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server started 
+2020-04-19 18:16:19,498 [main] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server started 
+2020-04-19 18:28:27,101 [Thread-10] INFO  mortgag-calculator.nrepl - nREPL server stopped 
+2020-04-19 18:28:27,234 [Thread-10] INFO  luminus.http-server - HTTP server stopped 
+2020-04-19 18:28:27,235 [Thread-10] INFO  mortgag-calculator.env - 
 -=[mortgag-calculator has shut down successfully]=- 
-2020-03-06 20:19:55,878 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server stopped 
-2020-03-06 20:19:55,879 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server stopped 
-2020-03-06 20:19:55,879 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app stopped 
-2020-03-06 20:19:55,880 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* stopped 
+2020-04-19 18:28:27,252 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.core/repl-server stopped 
+2020-04-19 18:28:27,253 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.core/http-server stopped 
+2020-04-19 18:28:27,253 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.handler/init-app stopped 
+2020-04-19 18:28:27,253 [Thread-10] INFO  mortgag-calculator.core - #'mortgag-calculator.db.core/*db* stopped 
