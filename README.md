@@ -6,40 +6,40 @@ A mortgage calculator built using Luminus version "3.57" (https://luminusweb.com
 
 ## Prerequisites
 
-Clojure 1.8.0 (https://repo1.maven.org/maven2/org/clojure/clojure/1.8.0/)
+<code>Clojure 1.8.0 (https://repo1.maven.org/maven2/org/clojure/clojure/1.8.0/)</code>
 
-Leiningen >=2.0 (https://github.com/technomancy/leiningen)
+<code>Leiningen >=2.0 (https://github.com/technomancy/leiningen)</code>
 
-Java OpenJDK 1.8.0.232
+<code>Java OpenJDK 1.8.0.232</code>
 
-Git
+<code>Git</code>
 
-WebStorm (or IntelliJ/Visual Studio Code)
+<code>WebStorm (or IntelliJ/Visual Studio Code)</code>
 
 ## Running
 
 First, you must clone the dev_cljs branch into your local machine: 
-* git clone https://github.com/yangaxnkohla/mortgag-calculator.git 
+<code>git clone https://github.com/yangaxnkohla/mortgag-calculator.git</code>
 
-To start a web server for the application, in your favourite IDE -> 'cd ../mortagag-calculator' into the project and run the following command in the terminal:
+To start a web server for the application, in your favourite IDE -> <code>cd ../mortagag-calculator</code> into the project and run the following command in the terminal:
 
     lein run 
 
-Once the server has started open Gooogle Chrome and go to 'http//localhost:3000'. Voilà!...or is something broken? 👀
+Once the server has started open Gooogle Chrome and go to <code>http//localhost:3000</code>. Voilà!...or is something broken? 👀
 
 If all went accordingly you should be able to perform calculations and get your results. 😊
 
 ## Code
 
 The Clojure code used for doing calculations can be found in: 
-* /src/clj/mortgag_calculator/routes/home.clj
+<code>/src/clj/mortgag_calculator/routes/home.clj</code>
 
 The HTML page can be found in: 
-* /resources/html/base.html
+<code>/resources/html/base.html</code>
 
 The scripts for creating the database can be found in: 
-* /resources/migrations/..
+<code>/resources/migrations/..</code>
 
 Finally, the sql queries saving and getting calculations can be found in: 
-* /resources/sql/queries.sql
+<code>/resources/sql/queries.sql</code>
 ***
