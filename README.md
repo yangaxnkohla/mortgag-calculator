@@ -18,7 +18,7 @@ A mortgage calculator built using Luminus version "3.57" (https://luminusweb.com
 
 ## Running
 
-First, you must clone the dev_cljs branch into your local machine: 
+First, you must clone the <code>dev_cljs</code> branch into your local machine: 
 <code>git clone https://github.com/yangaxnkohla/mortgag-calculator.git</code>
 
 To start a web server for the application, in your favourite IDE -> <code>cd ../mortagag-calculator</code> into the project and run the following command in the terminal:
